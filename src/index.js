@@ -10,7 +10,7 @@ import './index.css';
 
 import App from './App';
 import NotFound from './Pages/NotFound';
-import Videos from './Pages/Video';
+import Videos from './Pages/Videos';
 import VideoDetail from './Pages/VideoDetail';
 
 
