@@ -22,7 +22,7 @@ export default class Youtube {
             part: 'snippet',
             maxResults: 25,
             type: 'video',
-            relatedToVideoId: id
+            // relatedToVideoId: id // 2023년 9월자로 지원 중단.
         }
       })
       .then((res) =>
