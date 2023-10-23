@@ -18,7 +18,7 @@ function VideoDetail() {
           src={`http://www.youtube.com/embed/${video.id}`}
           frameBorder="0"
           title={title}
-        ></iframe>
+        />
         <div>
           <h2>{title}</h2> 
           <ChannelInfo id={channelId} name={channelTitle} />
