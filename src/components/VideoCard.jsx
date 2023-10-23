@@ -7,6 +7,8 @@ function VideoCard({ video }) {
   const navigate = useNavigate();
 
   return (
+    // videos/watch/${video.id} 이렇게 적으면 현재 경로에 해당 주소를 추가하는 방식으로 작동한다.
+    // <li onClick={() => {navigate(`videos/watch/${video.id}`, {state: {video}})}}> 
     <li onClick={() => {navigate(`/videos/watch/${video.id}`, {state: {video}})}}>
         <img className='w-full' src={thumbnails.medium.url} alt={title} />
         <div>
