@@ -14,9 +14,6 @@ function Videos() {
   } = useQuery(['videos', keyword], () => youtube.search(keyword));
   return (
     <>
-      <div>
-        Video {keyword ?  `⚪${keyword}` : `🔥`}
-      </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong 😅</p>}
       {videos && (
