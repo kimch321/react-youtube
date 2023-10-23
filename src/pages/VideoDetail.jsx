@@ -17,8 +17,8 @@ function VideoDetail() {
           height="640"
           src={`http://www.youtube.com/embed/${video.id}`}
           frameBorder="0"
-          // title={title}
-        /> {/* eslint-disable-line jsx-a11y/iframe-has-title */}
+          title="title"
+        />
         <div className='p-8'>
           <h2 className='text-xl font-bold'>{title}</h2> 
           <ChannelInfo id={channelId} name={channelTitle} />
