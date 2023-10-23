@@ -9,6 +9,7 @@ function VideoCard({ video }) {
   return (
     // videos/watch/${video.id} 이렇게 적으면 현재 경로에 해당 주소를 추가하는 방식으로 작동한다.
     // <li onClick={() => {navigate(`videos/watch/${video.id}`, {state: {video}})}}> 
+    // 최상위 경로에서 시작하는 것을 원한다면 /를 붙여주길 바란다.
     <li onClick={() => {navigate(`/videos/watch/${video.id}`, {state: {video}})}}>
         <img className='w-full' src={thumbnails.medium.url} alt={title} />
         <div>
