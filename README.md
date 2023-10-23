@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+배포 완료 
+주소: https://main--stately-tapioca-0c755a.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+배포 오류 해결
+문제: iframe이 로드되지 않음.
+해결: iframe 안의 src에사 사용하는 프로토콜을 http -> https로 변경
+원인: http 페이지 안에 https 페이지를 아이프레임으로 넣는 것은 가능하지만, https 페이지 안에 http 페이지를 아이프레임으로 넣는 것은 크롬 브라우저 보안정책상 불가능.
 
-## Available Scripts
+개념: 혼합 콘텐츠(Mixed Content)
+혼합 콘텐츠는 HTTPS를 통해 접속한 사이트에서 HTTP 통신을 통해 스크립트나 CSS, 이미지, 동영상 자원등을 요청하는 것.
+문제: 최초 접속은 HTTPS로 잘 하였으나, 그 이후 중간 중간 HTTP 통신을 하고 있는 것. 따라서 해당 사이트는 반만 HTTPS인 것이고 중간 중간 삽입되어 있는 이미지나, 동영상, CSS 등은 HTTP 통신을 하므로 그로 인한 보안 구멍이 생긴다. (크롬 브라우저의 경우: 혼합 콘텐츠의 위험성이 있는 사이트에 접속하면 안전하지 않은 콘텐츠가 차단됨 이라는 아이콘이 나타나게 됩니다.)
 
-In the project directory, you can run:
+혼합 콘텐츠의 종류
+수동적(Passive) 혼합 콘텐츠 - 이미지(사진, 그림 등)나 비디오 오디오같은 콘텐츠를 HTTP로 요청하는 것
+능동적(Active) 혼합 콘텐츠 - 브라우저가 실행하게 되는 스크립트, CSS, iframe, 플래시 등의 콘텐츠를 HTTP로 요청하는 것 (직면한 오류의 경우 여기에 해당함)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+파악 방법
+개발자 도구의 오류 메시지에서 확인할 수 있다.
